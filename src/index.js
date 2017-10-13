@@ -15,8 +15,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 database.ref('oktorejjestobiad/').set({
-    lunchAt: moment().add(1, 'days').hour(12).minutes(0).seconds(0).milliseconds(0).unix(),
-    foo: Math.random()
+    lunchAt: moment().add(1, 'days').hour(12).minutes(0).seconds(0).milliseconds(0).unix()
 }).then(()=>{
     process.exit();
 });

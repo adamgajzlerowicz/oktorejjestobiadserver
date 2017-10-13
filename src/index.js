@@ -14,8 +14,10 @@ const config = {
 firebase.initializeApp(config);
 const database = firebase.database();
 
+const lunchAt = parseInt(moment().add(1, 'days').hour(12).minutes(0).seconds(0).milliseconds(0).unix().toString() + '000');
+
 database.ref('oktorejjestobiad/').set({
-    lunchAt: moment().add(1, 'days').hour(12).minutes(0).seconds(0).milliseconds(0).unix() + 1000
+    lunchAt
 }).then(() => {
     process.exit();
 });
